@@ -13,6 +13,8 @@ navigation
      npm install @react-navigation/native-stack
      npm install --save react-native-gesture-handler react-native-reanimated react-native-screens
      
- 
 Async Storage
       npm install @react-native-async-storage/async-storage
+
+SQLite storage
+      npm install --save react-native-sqlite-storage
