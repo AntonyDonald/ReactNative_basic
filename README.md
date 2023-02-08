@@ -18,3 +18,26 @@ Async Storage
 
 SQLite storage
       npm install --save react-native-sqlite-storage
+      
+ QR code Scanner 
+      https://www.npmjs.com/package/react-native-qrcode-scanner
+ 
+ for gif [android/app/build.gradle ]
+ 
+    implementation 'com.facebook.fresco:animated-gif:2.6.0'
+    implementation 'com.facebook.fresco:animated-webp:2.0.0'
+    implementation 'com.facebook.fresco:webpsupport:2.0.0'
+    
+for Icons
+      1,Edit android/app/build.gradle ( NOT android/build.gradle ) and add the following:
+
+            apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+      
+      2,Edit android/settings.gradle :
+      
+            include ':react-native-vector-icons'
+            project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
+      
+      3,android/app/build.gradle 
+      
+            implementation project(':react-native-vector-icons')
