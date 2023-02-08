@@ -22,13 +22,16 @@ SQLite storage
  QR code Scanner 
       https://www.npmjs.com/package/react-native-qrcode-scanner
  
- for gif [android/app/build.gradle ]
+ for gif 
+ 
+ [android/app/build.gradle ]
  
     implementation 'com.facebook.fresco:animated-gif:2.6.0'
     implementation 'com.facebook.fresco:animated-webp:2.0.0'
     implementation 'com.facebook.fresco:webpsupport:2.0.0'
     
 for Icons
+
       1,Edit android/app/build.gradle ( NOT android/build.gradle ) and add the following:
 
             apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
