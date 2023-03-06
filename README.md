@@ -43,13 +43,20 @@ for Icons
       
       3,android/app/build.gradle 
       
-            implementation project(':react-native-vector-icons')
-            
+      dependencies{
+      ...
+      implementation project(':react-native-vector-icons')
+      }
+      
   For Image Picker
+  
       1, android/app/src/main/AndroidManifest.xml
+      
             <uses-permission android:name="android.permission.CAMERA"/>
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            
       2,npm i react-native-image-picker
+      
       3, refer youtube  -- https://www.youtube.com/watch?v=mD59nVo-ZSA&ab_channel=TechwithMuskan
   
