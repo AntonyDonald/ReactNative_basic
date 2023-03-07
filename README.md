@@ -101,3 +101,71 @@ for Icons
                         }
         4, refer youtube -- https://www.youtube.com/watch?v=brE91Obyn78&ab_channel=IntellectDeveloper          
   
+        5, Permission.js -- Component
+        
+                  import { PermissionsAndroid, Platform } from 'react-native';
+
+                  export const androidCameraPermission = () => new Promise(async (resolve, reject) => {
+                      try {
+                          if (Platform.OS === 'android' && Platform.Version > 22) {
+                              const granted = await PermissionsAndroid.requestMultiple([
+                                  PermissionsAndroid.PERMISSIONS.CAMERA,
+                                  PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+                                  PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE
+                              ]);
+                              if (
+                                  granted['android.permission.CAMERA'] !== 'granted' ||
+                                  granted['android.permission.WRITE_EXTERNAL_STORAGE'] !== 'granted' ||
+                                  granted['android.permission.READ_EXTERNAL_STORAGE'] !== 'granted'
+                              ) {
+                                  showError('please Allow Permission')
+                                  return resolve(false)
+                              }
+                              return resolve(true)
+                          }
+                          return resolve(true)
+                      } catch (error) {
+                          return resolve(false)
+                      }
+                  })
+                  
+          6 , this is for Image crop picker code
+                        
+                        const onSelectImage = async () => {
+                          const permissionStatus = await androidCameraPermission()
+                          if (permissionStatus || Platform.OS === 'android') {
+                              Alert.alert(
+                                  "Upload Aadhaar",
+                                  'Choose an Option',
+                                  [
+                                      { text: 'Camera', onPress: openCamera },
+                                      { text: 'Gallery', onPress: openGallery },
+                                      { text: 'Cancel', onPress: () => { } },
+                                  ]
+                              )
+                          }
+
+
+                      }
+
+                      const openCamera = async () => {
+                          ImagePicker.openCamera({
+                              width: 300,
+                              height: 400,
+                              cropping: true
+                          }).then(image => {
+                              console.log(image);
+                          });
+                      }
+                      const openGallery = async () => {
+
+                          ImagePicker.openPicker({
+                              width: 300,
+                              height: 400,
+                              cropping: true
+                          }).then(image => {
+                              console.log(image);
+                          });
+                      }
+        
+            
