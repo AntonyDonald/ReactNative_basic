@@ -59,4 +59,45 @@ for Icons
       2,npm i react-native-image-picker
       
       3, refer youtube  -- https://www.youtube.com/watch?v=mD59nVo-ZSA&ab_channel=TechwithMuskan
+      
+  For Image Crop Picker
+  
+      1, npm i react-native-image-crop-picker
+      
+      2, android/build.gradle
+            
+            allprojects {
+                 repositories {
+                 ...
+                  maven { url 'https://maven.google.com' }
+                  maven { url "https://www.jitpack.io" }
+                              }
+                        }
+                        
+      3, android/app/build.gradle
+      
+                  1. android {
+                      ...
+
+                      defaultConfig {
+                          ...
+                          vectorDrawables.useSupportLibrary = true
+                          ...
+                            }
+                            ...
+                         }
+
+                  2. android {
+                            compileSdkVersion 27
+                            buildToolsVersion "27.0.3"
+                            ...
+
+                            defaultConfig {
+                              ...
+                              targetSdkVersion 27
+                              ...
+                            }
+                            ...
+                        }
+        4, refer youtube -- https://www.youtube.com/watch?v=brE91Obyn78&ab_channel=IntellectDeveloper          
   
