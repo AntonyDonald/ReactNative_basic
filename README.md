@@ -58,6 +58,25 @@ for Icons
             
       2,npm i react-native-image-picker
       
+            1, import { launchCamera, launchImageLibrary } from 'react-native-image-picker'
+            
+            2,Code -- 
+            
+                   for open camera -->              const openCamera = async () => {
+                                                        const granded = await PermissionsAndroid.request(
+                                                            PermissionsAndroid.PERMISSIONS.CAMERA,
+                                                              );
+                                                              if (granded === PermissionsAndroid.RESULTS.GRANTED) {
+                                                                  const result = await launchCamera(option);
+                                                                  setCameraImage(result.assets[0].uri);
+                                                              }
+                                                              }
+                                                              
+                    for open Gallery  -->             const openGallery = async () => {
+                                                        const result = await launchImageLibrary(option);
+                                                        setCameraImage(result.assets[0].uri)
+                                                        }
+      
       3, refer youtube  -- https://www.youtube.com/watch?v=mD59nVo-ZSA&ab_channel=TechwithMuskan
       
   For Image Crop Picker
