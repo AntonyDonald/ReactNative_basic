@@ -61,7 +61,12 @@ for Icons
             1, import { launchCamera, launchImageLibrary } from 'react-native-image-picker'
             
             2,Code -- 
-            
+                   
+                                                  let option = {
+                                                              saveToPhotos: true,
+                                                              mediaType: 'photo',
+                                                               }
+
                    for open camera -->              const openCamera = async () => {
                                                         const granded = await PermissionsAndroid.request(
                                                             PermissionsAndroid.PERMISSIONS.CAMERA,
